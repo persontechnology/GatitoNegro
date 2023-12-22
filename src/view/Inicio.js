@@ -1,9 +1,11 @@
 
 import React,{useContext, useEffect, useState} from 'react'
-import {ActivityIndicator,FlatList} from 'react-native';
+import {ActivityIndicator,FlatList, RefreshControl} from 'react-native';
 import { AuthContext } from '../service/AuthContext';
 import { Pressable, Text, Box, HStack, Heading, Flex, Center, Spacer,Badge,VStack,ScrollView,Image } from 'native-base';
 import {API_URL} from "@env";
+
+
 export default function Inicio({navigation}) {
   const {userRolesPermisos,userToken}=useContext(AuthContext);
   const [data, setdata] = useState([]);
@@ -11,7 +13,7 @@ export default function Inicio({navigation}) {
 
   console.log(API_URL)
 
-  const getMovies = async () => {
+  const getListadoReservas = async () => {
     try {
       const response = await fetch(API_URL+'listado-reservas');
       const json = await response.json();
@@ -26,9 +28,8 @@ export default function Inicio({navigation}) {
   };
 
   useEffect(() => {
-    getMovies();
-    console.log(getMovies())
-
+    getListadoReservas();
+  
   }, []);
 
 
@@ -37,8 +38,10 @@ export default function Inicio({navigation}) {
 
   return (
     
-    <ScrollView>
-      <Center mt="3" mb="4">
+    <ScrollView refreshControl={
+      <RefreshControl refreshing={isLoading} onRefresh={getListadoReservas} />
+    }>
+      <Center mt="2" mb="2">
         <Heading fontSize="xl">SERVICIOS</Heading>
       </Center>
      
@@ -50,7 +53,7 @@ export default function Inicio({navigation}) {
 
           data.map((servicio)=>{
             return (
-              <Center flex={1} px={2} py={2}>
+              <Center flex={1} px={2} py={2} key={servicio.id}>
                 <Box alignItems="center">
                   <Pressable maxW="96" onPress={()=>navigation.navigate("ReservarServicio",servicio)} >
                     {({

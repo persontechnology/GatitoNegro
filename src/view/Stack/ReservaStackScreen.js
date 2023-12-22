@@ -1,11 +1,11 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Inicio from '../combustible/Inicio';
-import Detalle from '../combustible/Detalle';
+import InicioReserva from '../reservas/InicioReserva';
+import DetalleReserva from '../reservas/DetalleReserva';
 
 const CombustibleStack = createNativeStackNavigator();
 
-export default function CombustibleStackScreen() {
+export default function ReservaStackScreen() {
     return (
         <CombustibleStack.Navigator screenOptions={{
             headerStyle: {
@@ -16,8 +16,8 @@ export default function CombustibleStackScreen() {
               fontWeight: 'bold',
             },
           }}>
-            <CombustibleStack.Screen name="InicioCombustible" component={Inicio} options={{ title:'Reservas' }}/>
-            <CombustibleStack.Screen name="DetalleCombustible" component={Detalle} options={{ title:'Despacho de combustible' }}/>
+            <CombustibleStack.Screen name="InicioReserva" component={InicioReserva} options={{ title:'Reservas' }}/>
+            <CombustibleStack.Screen name="DetalleReserva" component={DetalleReserva} options={{ title:'Detalle reserva' }}/>
             
         </CombustibleStack.Navigator>
     )

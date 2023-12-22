@@ -4,7 +4,6 @@ import Inicio from '../Inicio';
 import { API_NAME } from "@env";
 import { Pressable } from 'react-native';
 import Perfil from '../auth/Perfil';
-import Ingresar from '../kilometraje/Ingresar';
 import ReservarServicio from '../reservas/ReservarServicio'
 
 import { Icon } from 'native-base';
@@ -40,7 +39,7 @@ export default function HomeStackScreen({navigation}) {
             <HomeStack.Screen name="Perfil" component={Perfil} />
 
             
-            <HomeStack.Screen name="ReservarServicio" component={ReservarServicio} />
+            <HomeStack.Screen name="ReservarServicio" component={ReservarServicio} options={{ title:'Detalle de reserva' }}/>
 
 
         </HomeStack.Navigator>

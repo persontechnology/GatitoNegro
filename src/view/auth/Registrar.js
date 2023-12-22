@@ -11,14 +11,14 @@ import * as Animatable from 'react-native-animatable';
 export default function Registrar({navigation}) {
 
 
-    const [apellidos, setapellidos] = useState('holahola');
-    const [nombres, setnombres] = useState('holahola');
-    const [identificacion, setidentificacion] = useState('holahola');
-    const [telefono, settelefono] = useState('holahola');
-    const [direccion, setdireccion] = useState('holahola');
-    const [username, setUsername] = useState('holahola@gmail.com');
-    const [password, setPassword] = useState('holahola');
-    const [password2, setPassword2] = useState('holahola');
+    const [apellidos, setapellidos] = useState('');
+    const [nombres, setnombres] = useState('');
+    const [identificacion, setidentificacion] = useState('');
+    const [telefono, settelefono] = useState('');
+    const [direccion, setdireccion] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [password2, setPassword2] = useState('');
     
     const [verPassword, setverPassword] = useState(false);
     const [verPassword2, setverPassword2] = useState(false);

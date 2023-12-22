@@ -7,7 +7,7 @@ import  MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunity
 import { Icon } from 'native-base';
 import { AuthContext } from '../service/AuthContext';
 import HomeStackScreen from './Stack/HomeStackScreen';
-import CombustibleStackScreen from './Stack/CombustibleStackScreen';
+import MisReservasStackScreen from './Stack/MisReservasStackScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -29,16 +29,25 @@ export default function HomeTab() {
         }} />
         
         {
-          userRolesPermisos.includes("CLIENTE") ?(
-            <Tab.Screen name="TabCombustible" component={CombustibleStackScreen} options={{
-              tabBarLabel: 'Combustible',
+          userRolesPermisos.includes("ADMIN") ?(
+            <Tab.Screen name="TabReserva" component={ReservaStackScreen} options={{
+              tabBarLabel: 'Reservas',
               tabBarIcon: ({ color, size }) => (
-                <Icon as={MaterialCommunityIcons} name="fuel" color={color} size={size} />
+                <Icon as={MaterialCommunityIcons} name="cart" color={color} size={size} />
               ),
             }} />
+            
           ):<></>
         }
-        
+
+
+        <Tab.Screen name="TabMisReservas" component={MisReservasStackScreen} options={{
+          tabBarLabel: 'Mis reservas',
+          tabBarIcon: ({ color, size }) => (
+            <Icon as={MaterialCommunityIcons} name="cart-heart" color={color} size={size} />
+          ),
+        }} />
+            
 
 
       </Tab.Navigator>

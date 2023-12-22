@@ -12,7 +12,7 @@ export default function Login({navigation}) {
 
     const [verPassword, setverPassword] = useState(false);
     const [username, setUsername] = useState('david.criollo14@gmail.com');
-    const [password, setPassword] = useState('12345678');
+    const [password, setPassword] = useState('UAwEAqdI');
     const [show, setShow] = useState(false);
     const toast = useToast();
     const [cargando, setcargando] = useState(false);

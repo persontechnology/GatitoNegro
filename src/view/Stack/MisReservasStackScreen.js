@@ -1,23 +1,23 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Inicio from '../combustible/Inicio';
-import Detalle from '../combustible/Detalle';
+import InicioMisReserva from '../reservas/InicioMisReserva';
+
 
 const CombustibleStack = createNativeStackNavigator();
 
-export default function CombustibleStackScreen() {
+export default function MisReservasStackScreen() {
     return (
         <CombustibleStack.Navigator screenOptions={{
             headerStyle: {
-              backgroundColor: '#f97316',
+              backgroundColor: '#3B71CA',
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
               fontWeight: 'bold',
             },
           }}>
-            <CombustibleStack.Screen name="InicioCombustible" component={Inicio} options={{ title:'Reservas' }}/>
-            <CombustibleStack.Screen name="DetalleCombustible" component={Detalle} options={{ title:'Despacho de combustible' }}/>
+            <CombustibleStack.Screen name="InicioMisReservas" component={InicioMisReserva} options={{ title:'Mis Reservas' }}/>
+            {/* <CombustibleStack.Screen name="DetalleReserva" component={DetalleReserva} options={{ title:'Detalle reserva' }}/> */}
             
         </CombustibleStack.Navigator>
     )
