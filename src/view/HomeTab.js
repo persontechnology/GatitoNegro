@@ -8,6 +8,7 @@ import { Icon } from 'native-base';
 import { AuthContext } from '../service/AuthContext';
 import HomeStackScreen from './Stack/HomeStackScreen';
 import MisReservasStackScreen from './Stack/MisReservasStackScreen';
+import ReservaStackScreen from './Stack/ReservaStackScreen';
 
 
 const Tab = createBottomTabNavigator();

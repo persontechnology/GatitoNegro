@@ -8,7 +8,7 @@ import * as Animatable from 'react-native-animatable';
 
 export default function RestablecerContrasena({navigation}) {
 
-    const [email, setemail] = React.useState('david.criollo14@gmail.com');
+    const [email, setemail] = React.useState('');
         const [cargando, setcargando] = React.useState(false);
         const toast = useToast();
 
